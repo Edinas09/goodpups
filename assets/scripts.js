@@ -12,11 +12,20 @@ function getDogs(limit) {
       if (result.status == 'success') {
         var images = result.message;
         buildProfiles(images);
+        setBanner(images);
       }
     }
   });
 }
+function setBanner(images){
+  //selelcionar uma imagen aleotariamente
+  //pegar o link
+  image =   images[Math.floor(Math.random() * images.length)];
+  //passar para o src da img
+  //selecionando o elemento
+  $('.banner  img').attr('src', image)
 
+}
 function buildProfiles(images) {
   var cardTemplate = $('.dog-profile');
   
@@ -25,10 +34,11 @@ function buildProfiles(images) {
     let rating = getRating();
 
 
-    
+    $(card).addClass('dog-profile__id-'+index);
     $(card).find('.dog-profile__image img').attr('src', image);
     $(card).find('.dog-profile__content').text(getContent());
     $(card).find('.dog-profile__name').text(getName());
+    $(card).find('[type="button"]').attr('onclick', 'removeProfile('+index+')');
 
     for (var i = 0; i < rating; i++) {
         $(card).find('.dog-profile__rating').text( $(card).find('.dog-profile__rating').text() + '* ');
@@ -43,6 +53,12 @@ function buildProfiles(images) {
 function cleanUp() {
   $('.dog-profile:first()').remove();
   $('.dog-profile').show();
+}
+
+function removeProfile(index){
+  
+  //$('.dog-profile__id-'+index).remove();
+  $('.dog-profile__id-'+index).hide();
 }
 
 function getRating() {
