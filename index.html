@@ -18,37 +18,43 @@
         class="section-bg opacity-25">
       <h1 class="text-6xl text-white text-center relative">Good Pups!</h1>
     </section>
+    
     <section class="dogs pt-8 pb-16">
-      <div class="container mx-auto">
+      <div class="container mx-auto ">
         <div class="flex flex-wrap">
-
-           
-          <div class="dog-profile w-1/2 px-5 text-center mb-8  " style="display:none;">
-            <div class="bg-gray-300 rounded-xl border-t border-gray-400 shadow-md">
-
-            <figure class="dog-profile__image w-2/1 mx-auto mb-3 relative overflow-hidden">
-              <img src="" class="object-cover h-48 w-full rounded-t-xl border-t border-gray-400">
+          
+          <div class="dog-profile  lg:w-1/2 sm:w-0/0 px-5 text-center mb-8  " style="display:none;">
+            <div class="bg-gray-300 rounded-xl border-t border-gray-400 shadow-md grid grid-cols-3 gap-2">
+            
+            <figure class="dog-profile__image relative overflow-hidden">
+              <div class=" h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden bg-dog-profile__image" >
+              <img src="" class="absolute inset-0 w-full h-full rounded-l-lg border-gray-400 md:w-48">
+            </div>
             </figure>
-
-            <div class="dog-profile__name text-lg">
+          
+            <div class="col-span-2 grid grid-cols-1 gap-4 ">
+            <div class="dog-profile__name text-lg pt-6">
             </div>
-            <div class="dog-profile__rating text-orange-400 text-2xl">
+            <div class="dog-profile__rating text-orange-400 text-2xl px-4">
             </div>
-            <div class="dog-profile__content"> 
+            <div class="dog-profile__content pb-6 px-4"> 
             </div>
-
+          </div>
+          </div>
           </div>
 
-
-
-          </div>
+          
         </div>
-
         </div>
-      
     </section>
+
+    
+
+     
+
+
+
     <footer class="bg-gray-700 h-40">
-      
     </footer>
   </div>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
