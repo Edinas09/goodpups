@@ -23,18 +23,15 @@ function buildProfiles(images) {
   images.forEach(function(image, index){
     let card = cardTemplate.clone();
     let rating = getRating();
+
+
     
     $(card).find('.dog-profile__image img').attr('src', image);
     $(card).find('.dog-profile__content').text(getContent());
     $(card).find('.dog-profile__name').text(getName());
 
     for (var i = 0; i < rating; i++) {
-      if (rating< 3) {
-        rating = 3
         $(card).find('.dog-profile__rating').text( $(card).find('.dog-profile__rating').text() + '* ');
-      } else {
-        $(card).find('.dog-profile__rating').text( $(card).find('.dog-profile__rating').text() + '* ');
-      }
     }
 
     $(card).appendTo('.dogs .flex');
@@ -49,7 +46,18 @@ function cleanUp() {
 }
 
 function getRating() {
-  return Math.floor(Math.random() * 5) + 1;
+  res = Math.floor(Math.random() * 5) + 1;
+  if (res <= 3) {
+    res = 3;
+  }else{
+    res = res;
+  }
+  
+  
+  return res;
+
+
+
 }
 
 function getContent() {
