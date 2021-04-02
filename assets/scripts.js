@@ -29,7 +29,12 @@ function buildProfiles(images) {
     $(card).find('.dog-profile__name').text(getName());
 
     for (var i = 0; i < rating; i++) {
-      $(card).find('.dog-profile__rating').text( $(card).find('.dog-profile__rating').text() + '* ');
+      if (rating< 3) {
+        rating = 3
+        $(card).find('.dog-profile__rating').text( $(card).find('.dog-profile__rating').text() + '* ');
+      } else {
+        $(card).find('.dog-profile__rating').text( $(card).find('.dog-profile__rating').text() + '* ');
+      }
     }
 
     $(card).appendTo('.dogs .flex');
